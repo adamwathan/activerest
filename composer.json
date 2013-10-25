@@ -1,0 +1,21 @@
+{
+    "name": "adamwathan/activerest",
+    "description": "Server-side ActiveRecord for RESTful APIs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Wathan",
+            "email": "adam.wathan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "AdamWathan\\ActiveRest": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
