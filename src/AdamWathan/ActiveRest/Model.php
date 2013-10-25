@@ -5,11 +5,12 @@ abstract class Model {
 	protected $baseUrl;
 	protected $attributes = array();
 	protected $primaryKey = 'id';
+	protected $actions = array();
 
 	public static function find($id)
 	{
 		$instance = new static;
-		if ( ! $instance->attributes = $instance->getClient()->find($id)) {
+		if ( ! $instance->attributes = $instance->getClient()->show($id)) {
 			return null;
 		}
 		return $instance;
@@ -17,7 +18,7 @@ abstract class Model {
 
 	protected function getClient()
 	{
-		$client = new Client($this->baseUrl);
+		$client = new Client($this->baseUrl, $this->actions);
 		return $client;
 	}
 
@@ -36,7 +37,7 @@ abstract class Model {
 
 	protected function performUpdate()
 	{
-		if ( ! $this->attributes = $this->getClient()->update($this->getKey(), $this->attributes)){
+		if ( ! $this->attributes = $this->getClient()->update($this->getKey(), $this->attributes)) {
 			return false;
 		}
 		return true;
@@ -49,7 +50,7 @@ abstract class Model {
 
 	protected function performInsert()
 	{
-		if ( ! $this->attributes = $this->getClient()->insert($this->attributes)){
+		if ( ! $this->attributes = $this->getClient()->store($this->attributes)){
 			return false;
 		}
 		return true;
@@ -57,7 +58,7 @@ abstract class Model {
 
 	public function delete()
 	{
-		if ( ! $this->getClient()->delete($this->getKey())) {
+		if ( ! $this->getClient()->destroy($this->getKey())) {
 			return false;
 		}
 		return true;
