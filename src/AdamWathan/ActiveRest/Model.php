@@ -1,17 +1,17 @@
 <?php namespace AdamWathan\ActiveRest;
 
 abstract class Model {
-	
+
 	protected $baseUrl;
 	protected $attributes = array();
 	protected $primaryKey = 'id';
 	protected $actions = array();
 
-	public static function find($id)
+	public static function Find($id)
 	{
 		$instance = new static;
-		if ( ! $instance->attributes = $instance->getClient()->show($id)) {
-			return null;
+		if( ! $instance->attributes = $instance->getClient()->show($id)) {
+			return NULL;
 		}
 		return $instance;
 	}
