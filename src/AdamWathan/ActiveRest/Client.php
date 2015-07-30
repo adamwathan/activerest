@@ -4,7 +4,7 @@ use Guzzle\Http\Client as GuzzleClient;
 
 class Client {
 
-	protected $BaseUrl;
+	protected $baseUrl;
 	protected $actions;
 	protected $defaultActions = array(
 		'index' => array(
