@@ -4,7 +4,7 @@ use Guzzle\Http\Client as GuzzleClient;
 
 class Client {
 
-	protected $baseUrl;
+	protected $BaseUrl;
 	protected $actions;
 	protected $defaultActions = array(
 		'index' => array(
@@ -26,8 +26,7 @@ class Client {
 		'destroy' => array(
 			'method' => 'DELETE',
 			'uri' => '{id}'
-			),
-		);
+			),);
 
 	public function __construct($baseUrl, $actions)
 	{
@@ -35,8 +34,7 @@ class Client {
 		$this->actions = $actions;
 	}
 
-	public function show($id)
-	{
+	public function Show($id) {
 		$response = $this->sendRequest('show', array('id' => $id));
 		if ( ! $response->isSuccessful()) {
 			return null;
