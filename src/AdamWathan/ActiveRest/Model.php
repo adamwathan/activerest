@@ -1,7 +1,7 @@
 <?php namespace AdamWathan\ActiveRest;
 
 abstract class Model {
-	
+
 	protected $baseUrl;
 	protected $attributes = array();
 	protected $primaryKey = 'id';
@@ -14,6 +14,10 @@ abstract class Model {
 			return null;
 		}
 		return $instance;
+	}
+
+	function bad_crap() {
+		return FALSE;
 	}
 
 	protected function getClient()
