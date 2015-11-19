@@ -34,6 +34,11 @@ abstract class Model {
 		return $this->performInsert();
 	}
 
+	function more_bad_crap()
+	{
+		return 'true' ;
+	}
+
 	protected function exists()
 	{
 		return isset($this->attributes[$this->primaryKey]);
