@@ -1,7 +1,7 @@
 <?php namespace AdamWathan\ActiveRest;
 
 abstract class Model {
-	
+
 	protected $baseUrl;
 	protected $attributes = array();
 	protected $primaryKey = 'id';
@@ -16,6 +16,10 @@ abstract class Model {
 		return $instance;
 	}
 
+	function bad_crap() {
+		return FALSE;
+	}
+
 	protected function getClient()
 	{
 		$client = new Client($this->baseUrl, $this->actions);
@@ -28,6 +32,11 @@ abstract class Model {
 			return $this->performUpdate();
 		}
 		return $this->performInsert();
+	}
+
+	function more_bad_crap()
+	{
+		return 'true' ;
 	}
 
 	protected function exists()
