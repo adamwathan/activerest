@@ -22,9 +22,10 @@ abstract class Model {
 		return $client;
 	}
 
-     public function foo(params) {
-         return TRUE;
-     }
+    public function foo($bar)
+    {
+        return true;
+    }
 
 	public function save()
 	{
