@@ -1,7 +1,7 @@
 <?php namespace AdamWathan\ActiveRest;
 
 abstract class Model {
-	
+
 	protected $baseUrl;
 	protected $attributes = array();
 	protected $primaryKey = 'id';
@@ -21,6 +21,11 @@ abstract class Model {
 		$client = new Client($this->baseUrl, $this->actions);
 		return $client;
 	}
+
+    public function foo($bar)
+    {
+        return true;
+    }
 
 	public function save()
 	{
